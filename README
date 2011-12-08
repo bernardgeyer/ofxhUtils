@@ -1,0 +1,17 @@
+ofxUtils is an openFrameworks add-on that includes the following tools:
+
+- hEvents:
+  uses ofEvents to send messages between different objects or to any object
+  that registers to that event.
+  Events are called by symbols (c++ strings) stored in a map that represent   
+  them.
+
+- hStringUtils:
+  Some string conversion tools used by hEvents
+
+- hTable:
+  An  hTable is a list of values stored in a vector<double> in ascending 
+  order.
+  Can be used as a conversion table.
+
+Current version: 0.01
