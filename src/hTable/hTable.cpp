@@ -81,20 +81,42 @@ double hTable::getValue(int index)
 }
 
 double hTable::getNearestValue(double value)
-{
-	int size = data.size();
+// Compare a value to the values in the table
+// and return the nearest value
+{	
+	int size = data.size();		// actual size of the table
+	double nearestValue = 0.0;   // default value = 0.0, used when the table is empty
+	
     if(size > 0) {
-        for(int i = 0; i < size; ++i) {
-            // cout << "searched value: " << value << " ";
-            // cout << "data[i]: " << data[i] << endl;
-            if(data[i] == value) return value;
-            else if(data[i] > value) {
-                if(i == 0) return data[0];
-                else       return data[i-1];
-            }
-        }
-    } else return 0.0;
+		if(value >= data[size -1]) {
+			nearestValue = data[size -1];
+		}
+		
+        else {
+			for(int i = 0; i < size; ++i) {
+				
+				if(value == data[i]) {
+					nearestValue = value;
+					break;
+				}
+				
+				else if(value < data[i]){
+					if(i == 0) nearestValue = data[0];
+					else       nearestValue = data[i-1];
+					break;
+				}
+				
+			} // <- for ...
+			
+		} // <- first else
+		
+    } // <- if(size > 0)
+	
+	// cout << "value = " << value << " nearestValue = " << nearestValue << endl;
+	
+	return nearestValue;
 }
+
 
 //--------------------------------------------------------------
 

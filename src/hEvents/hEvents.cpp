@@ -155,7 +155,7 @@ hEvent * hEvents::addEvent(std::string dictName, std::string eventName)
 
 hEvent * hEvents::addEvent(std::string eventName)
 {
-    addEvent(selectedDictionary->name, eventName);
+    return addEvent(selectedDictionary->name, eventName);
 }
 
 // ---------------------------------------------------------------
@@ -180,7 +180,7 @@ hEvent * hEvents::getEvent(std::string dictName, std::string eventName)
 
 hEvent * hEvents::getEvent(std::string eventName)
 {
-    getEvent(selectedDictionary->name, eventName);
+    return getEvent(selectedDictionary->name, eventName);
 }
 
 
