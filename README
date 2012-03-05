@@ -14,6 +14,9 @@ ofxUtils is an openFrameworks add-on that includes the following tools:
   order.
   Can be used as a conversion table.
 
-Current version: 1.0
+Current version: 1.1
+
+---------------------------------------------------------------------------
 Changes since 1.0:
+Corrections of hEvents::addEvent, hEvents::getEvent and hTable::getNearestValue
 
