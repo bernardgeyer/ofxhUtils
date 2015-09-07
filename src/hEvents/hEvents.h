@@ -48,7 +48,7 @@
 
 //--------------------------------------------------------------
 
-struct hEventArgs : public ofEventArgs {
+struct hEventArgs /* : public ofEventArgs */ {
 // We use a vector of doubles and a string to represent various arguments
 	string objectName;		// the name of the object (empty means any object)
 	string eventName;       // the name of the event
@@ -182,7 +182,9 @@ public :
 	template <typename TArgumentsType, class TListenerClass>
     void addListener(std::string dictName, std::string eventName, TListenerClass  * listener, void (TListenerClass::*listenerMethod)(TArgumentsType&)){
         hEvent * event = addEvent(dictName, eventName);
-        if(event != NULL) ofAddListener(*event, listener, listenerMethod);
+        if(event != NULL) 
+			// *event += Poco::delegate(listener, listenerMethod);
+			ofAddListener(*event, listener, listenerMethod);	
     }
     // Ask a method of an object to respond to an event
     // If the event does not exist, create it first
@@ -191,8 +193,10 @@ public :
 	template <typename TArgumentsType, class TListenerClass>
     void addListener(std::string eventName, TListenerClass  * listener, void (TListenerClass::*listenerMethod)(TArgumentsType&)){
         hEvent * event = addEvent("english", eventName);
-        if(event != NULL) ofAddListener(*event, listener, listenerMethod);
-    }
+        if(event != NULL) 
+			// *event += Poco::delegate(listener, listenerMethod);
+			ofAddListener(*event, listener, listenerMethod);	
+}
     // // Ask a method of an object to respond to an event using the default dictionary
 
 	// ---------------------------------------------------------------

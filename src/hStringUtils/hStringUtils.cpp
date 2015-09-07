@@ -42,6 +42,15 @@ std::string spacesToUnderscores(std::string str)
     return str;
 }
 
+std::string underscoresToSpaces(std::string str)
+{
+	int size = str.size();
+    for(int i = 0; i < str.size(); ++i)
+        if(str[i] == '_') str[i] = ' ';
+	
+    return str;
+}
+
 std::string packMessage(std::string message, std::string param)
 {
     message += " ";

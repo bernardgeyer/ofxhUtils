@@ -34,6 +34,9 @@ std::string spacesToUnderscores(std::string str);
 // Transform a string to a single word.
 // Spaces are eventually replaces by underscores
 
+std::string underscoresToSpaces(std::string str);
+// Underscores are replaces by spaces (for better display on gui)
+
 std::string packMessage(std::string message, std::string param);
 // Concat the parameter string to a message
 // Used by hEvents::unserialize

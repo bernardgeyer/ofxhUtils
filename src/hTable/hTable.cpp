@@ -30,9 +30,7 @@
 #include <iostream>
 using namespace std;
 
-#if !defined( __APPLE_CC__ )
 #include <float.h>
-#endif
 
 hTable::hTable()
 {
